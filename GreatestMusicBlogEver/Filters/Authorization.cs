@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web;
@@ -41,7 +42,7 @@ namespace Service.Filters
             var dbToken = allTokens.SingleOrDefault(t => t.Value == header) 
                 ?? allTokens.SingleOrDefault(t => t.Value == cookieToken);
 
-            if (dbToken == null || userRepository.Get(dbToken.UserId) == null)
+            if (dbToken == null || dbToken.ExpireDate < DateTime.Now || userRepository.Get(dbToken.UserId) == null)
             {
                 actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
                 return;

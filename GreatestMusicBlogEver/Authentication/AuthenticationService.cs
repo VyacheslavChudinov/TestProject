@@ -34,7 +34,7 @@ namespace Service.Authentication
 
         public void Login(User user, bool rememberMe)
         {
-            var expiresDate = DateTime.Now.AddMinutes(30);
+            var expiresDate = DateTime.Now.AddMinutes(1);
             if (rememberMe)
             {
                 expiresDate = expiresDate.AddDays(1);

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EFManager;
 using Entities.Concrete;
 using Interfaces;
-using WebGrease.Css.Extensions;
+using Service.Exceptions;
 
 namespace Service.Authentication
 {
@@ -24,6 +23,11 @@ namespace Service.Authentication
 
         public User Register(User user)
         {
+            var userExist = userRepository.FindAll(u => u.Login == user.Login || u.Password == user.Password) != null;
+            if (userExist)
+            {
+                throw new UserAlreadyExistException("Can't register user with login or password that already used.");
+            }
             var newUser = new User {Login = user.Login, Password = user.Password};
             return userRepository.Add(newUser);
         }

@@ -1,6 +1,4 @@
 using System.Data.Entity;
-using System.Linq;
-using System.Web.Mvc;
 using EFManager;
 using Interfaces;
 using Microsoft.Practices.Unity;
@@ -22,14 +20,6 @@ namespace Service
             container.RegisterType<DbContext, MusicBlogDbContext>(new HierarchicalLifetimeManager());
 
             config.DependencyResolver = new UnityDependencyResolver(container);            
-
-            
-            //var oldProvider = FilterProviders.Providers.Single(f => f is FilterAttributeFilterProvider);
-            //FilterProviders.Providers.Remove(oldProvider);
-            //var newProvider = new UnityFilterAttributeFilterProvider(container);
-            //FilterProviders.Providers.Add(newProvider);
-
-
         }
     }
 }

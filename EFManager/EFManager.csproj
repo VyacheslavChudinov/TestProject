@@ -54,17 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201409300854309_Initial.cs" />
-    <Compile Include="Migrations\201409300854309_Initial.Designer.cs">
-      <DependentUpon>201409300854309_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409301114408_AddSongDownloadStatistics.cs" />
-    <Compile Include="Migrations\201409301114408_AddSongDownloadStatistics.Designer.cs">
-      <DependentUpon>201409301114408_AddSongDownloadStatistics.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409301116516_ChangeForeignKeysForSong.cs" />
-    <Compile Include="Migrations\201409301116516_ChangeForeignKeysForSong.Designer.cs">
-      <DependentUpon>201409301116516_ChangeForeignKeysForSong.cs</DependentUpon>
+    <Compile Include="Migrations\201409301132594_Initial.cs" />
+    <Compile Include="Migrations\201409301132594_Initial.Designer.cs">
+      <DependentUpon>201409301132594_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MusicBlogDBContext.cs" />
@@ -88,14 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409300854309_Initial.resx">
-      <DependentUpon>201409300854309_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409301114408_AddSongDownloadStatistics.resx">
-      <DependentUpon>201409301114408_AddSongDownloadStatistics.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409301116516_ChangeForeignKeysForSong.resx">
-      <DependentUpon>201409301116516_ChangeForeignKeysForSong.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409301132594_Initial.resx">
+      <DependentUpon>201409301132594_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

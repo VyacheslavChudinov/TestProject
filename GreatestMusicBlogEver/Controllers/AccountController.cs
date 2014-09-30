@@ -16,10 +16,10 @@ namespace Service.Controllers
             this.authenticationService = authenticationService;
         }
 
-        [HttpGet]
-        public IHttpActionResult Login(int id)
+        [HttpPost]
+        public IHttpActionResult Login(string login, string password)
         {
-            var user = authenticationService.GetUser(id);
+            var user = authenticationService.GetUser(login, password);
             if (user == null)
             {
                 return NotFound();

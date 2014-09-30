@@ -13,5 +13,7 @@ namespace Interfaces
         User GetUser(int id);
 
         IEnumerable<User> GetAllUsers();
+
+        User GetUser(string login, string password);
     }
 }

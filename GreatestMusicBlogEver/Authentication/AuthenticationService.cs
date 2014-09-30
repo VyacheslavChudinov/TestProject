@@ -14,6 +14,7 @@ namespace Service.Authentication
 
         private readonly IUserRepository userRepository;
         private readonly ITokenRepository tokenRepository;
+        
 
         public AuthenticationService(IUserRepository userRepository, ITokenRepository tokenRepository)
         {
@@ -26,7 +27,7 @@ namespace Service.Authentication
             var userAlreadyExist = userRepository.FindAll(u => u.Login == user.Login || u.Password == user.Password).Count() != 0;
             if (userAlreadyExist)
             {
-                throw new UserAlreadyExistException("Can't register user with login or password that already used.");
+                throw new MusicBlogException("Can't register user with login or password that already used.");
             }
             var newUser = new User {Login = user.Login, Password = user.Password};
             return userRepository.Add(newUser);
@@ -83,6 +84,10 @@ namespace Service.Authentication
         public User GetUser(int id)
         {
             return userRepository.Get(id);
+        }
+        public User GetUser(string login, string password)
+        {
+            return userRepository.FindAll(u => u.Login == login && u.Password == password).SingleOrDefault();
         }
 
 

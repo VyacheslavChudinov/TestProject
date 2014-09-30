@@ -13,7 +13,11 @@ namespace EFManager
         public MusicBlogDbContext()
             : base("MusicBlogDBContext")
         {
-
+            
         }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //}
     }
 }

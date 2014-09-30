@@ -15,7 +15,7 @@ namespace Entities.Concrete
         [MinLength(8)]
         [MaxLength(16)]                
         public string Password { get; set; }    
-        
+                
         public virtual ICollection<Song> Songs { get; set; }
         public virtual ICollection<Album> Albums { get; set; }
     }

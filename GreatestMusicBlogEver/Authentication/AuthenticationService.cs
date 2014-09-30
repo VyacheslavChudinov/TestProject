@@ -23,8 +23,8 @@ namespace Service.Authentication
 
         public User Register(User user)
         {
-            var userExist = userRepository.FindAll(u => u.Login == user.Login || u.Password == user.Password) != null;
-            if (userExist)
+            var userAlreadyExist = userRepository.FindAll(u => u.Login == user.Login || u.Password == user.Password).Count() != 0;
+            if (userAlreadyExist)
             {
                 throw new UserAlreadyExistException("Can't register user with login or password that already used.");
             }

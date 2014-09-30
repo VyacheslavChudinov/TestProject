@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Concrete\Album.cs" />
     <Compile Include="Abstract\Identity.cs" />
+    <Compile Include="Concrete\SongDownloadStatistics.cs" />
     <Compile Include="Concrete\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Concrete\Song.cs" />

@@ -15,6 +15,8 @@ namespace Entities.Concrete
 
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+
+        public virtual User Downloader { get; set; }
         public virtual ICollection<Song> Songs { get; set; }
     }
 }

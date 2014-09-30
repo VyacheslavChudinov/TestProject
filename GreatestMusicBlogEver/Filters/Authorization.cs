@@ -15,7 +15,6 @@ namespace Service.Filters
         private const string AuthCookieName = "AuthorizationCookie";
         private readonly IUserRepository userRepository;
         private readonly ITokenRepository tokenRepository;
-
         
         public Authorization()
         {
